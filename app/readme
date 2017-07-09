@@ -1,0 +1,21 @@
+/**
+    1.添加配置，然后Make Module 'app'
+      1.1.在build.gradle(app)添加：
+            根内：apply plugin: 'org.greenrobot.greendao' //------- 需要增加 -------
+            dependencies内：compile 'org.greenrobot:greendao:3.2.0' //------- 需要增加 -------
+            Android{}内：
+                greendao { //------- 需要增加 -------
+                    schemaVersion 1//数据库版本号
+                    daoPackage 'com.gdd.greendao'//设置DaoMaster、DaoSession、Dao包名
+                    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+                    //targetGenDirTest：设置生成单元测试目录
+                    //generateTests：设置自动生成单元测试用例
+                }
+      1.2.在build.gradle(Project)添加：
+            buildscript的dependencies内：classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'  //------- 需要增加 -------
+*/
+
+/**
+    2.table更新，如何完美解决？
+
+*/
